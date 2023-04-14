@@ -17,7 +17,7 @@ model Usuario {
   email     String       @unique
   perfil    Perfil[]
   publi     Publicacao[]
-  coment     Comentario[]
+  coment    Comentario[]
 }
 
 model Perfil {
@@ -37,11 +37,31 @@ model Perfil {
 }
 
 model Publicacao {
-  Pub_id Int @id @default(autoincrement())
-  conteudo String
-  img Blob
-  data_e_horario DateTime
-  id_User Int
-  user    Usuario @relation(fields: [id_User], references: [id])
+  Pub_id       Int      @id @default(autoincrement())
+  conteudo     String
+  img          Blob
+  data_horario DateTime
+  id_User      Int
+  user         Usuario  @relation(fields: [id_User], references: [id])
 }
 
+model Comentario {
+  id_Comentario Int        @id @default(autoincrement())
+  data_horario  DateTime
+  conteudo      String
+  id_User       Int
+  user          Usuario    @relation(fields: [id_User], references: [id])
+  Pub_id        Int
+  Publi         Publicacao @relation(fields: [Pub_id], references: [id])
+  Resp          Resposta[]
+}
+
+model Resposta {
+  id_Resp       Int        @id @default(autoincrement())
+  ata_horario   DateTime
+  conteudo      String
+  id_User       Int
+  user          Usuario    @relation(fields: [id_User], references: [id])
+  id_Comentario Int
+  Coment        Comentario @relation(fields: [id_Comentario], references: [id])
+}
