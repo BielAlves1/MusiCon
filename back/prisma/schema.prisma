@@ -7,49 +7,46 @@ generator client {
 
 datasource db {
   provider = "mysql"
-  url      = env("DATABASE_URL")
+  url = env("DATABASE_URL")
 }
 
 model Usuario {
-  id_User   Int          @id @default(autoincrement())
-  user_Name String
-  senha     String
-  email     String       @unique
-  perfil    Perfil[]
-  publi     Publicacao[]
-  coment    Comentario[]
+  id_User Int @id @default(autoincrement())
+  email String
+  senha String
+  user_name String @unique
+  perfil Perfil[]
+  publicacao Publicacao[]
 }
-
 model Perfil {
-  id_Perfil       Int      @id @default(autoincrement())
-  nome            String
-  sobrenome       String
-  genero          String
-  avatar          Blob
+  id_User Int
+  nome String
+  sobrenome String
+  genero String
+  avatar String
   data_Nascimento DateTime
-  quant_Amigos    Int
-  nivel_Perfil    Int
-  tipo            String
-  genero_Musical  String
-  instrumentos_M  String
-  id_User         Int
-  user            Usuario  @relation(fields: [id_User], references: [id])
+  qntd_Amigos Int
+  nivel_Perfil Int
+  tipo String
+  genero_Musical String
+  instru_Musical String
+  usuario Usuario @relation(fields: [id_User], references: [id_User])
 }
 
 model Publicacao {
-  Pub_id       Int      @id @default(autoincrement())
-  conteudo     String
-  img          Blob
+  Pub_id Int @id @default(autoincrement())
+  id_User Int
+  conteudo String
   data_horario DateTime
-  id_User      Int
-  user         Usuario  @relation(fields: [id_User], references: [id])
+  img String
+  usuario Usuario @relation(fields: [id_User], references: [id_User])
 }
 
 model Comentario {
-  id_Comentario Int        @id @default(autoincrement())
-  data_horario  DateTime
+  id_Coment Int @id @default(autoincrement())
+  id_User Int
+  data_horario DateTime
   conteudo      String
-  id_User       Int
   user          Usuario    @relation(fields: [id_User], references: [id])
   Pub_id        Int
   Publi         Publicacao @relation(fields: [Pub_id], references: [id])
@@ -64,4 +61,5 @@ model Resposta {
   user          Usuario    @relation(fields: [id_User], references: [id])
   id_Comentario Int
   Coment        Comentario @relation(fields: [id_Comentario], references: [id])
-}
+} 
+
