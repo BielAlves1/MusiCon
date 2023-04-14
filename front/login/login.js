@@ -15,12 +15,13 @@ function login() {
                 localStorage.setItem("info", JSON.stringify(
                     {
                         "id_user": resp.id_user, 
+                        "id_role": resp.id_role,
                         "nome_user":resp.nome_user, 
                         "email":resp.email, 
-                        "senha":resp.senha
+                        "token":resp.token
                     }
                     ));
-                window.location.href = "../../home/home.html";
+                window.location.href = "../../pages/home/home.html";
             }
             else {
                 alert("Email ou Senha Incorretas")
