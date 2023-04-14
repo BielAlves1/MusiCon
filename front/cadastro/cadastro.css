@@ -18,6 +18,8 @@
   left: 50%;
   position: absolute;
   transform: translate(-50%, -50%);
+  transition: 0.5s;
+    box-shadow: 0px 0px 1px 1px rgba(251, 255, 0, 0.5);
   border-radius: 10px;
   padding: 70px 30px;
   }
@@ -80,7 +82,7 @@
   text-decoration: none;
   overflow: hidden;
   transition: 0.5s;
-  margin-top: 250px;
+  margin-top: 180px;
   border-radius: 10px;
   }
   
