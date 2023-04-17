@@ -12,21 +12,24 @@ datasource db {
 
 model Usuario {
   id_User Int @id @default(autoincrement())
-  email String
-  senha String
   user_name String @unique
+  email String @unique
+  senha String
   perfil Perfil[]
   publicacao Publicacao[]
+  comentario Comentario[]
+  resposta Resposta[]
 }
 model Perfil {
+  id_Perfil Int @id @default(autoincrement())
   id_User Int
   nome String
   sobrenome String
   genero String
-  avatar String
+  avatar String?
   data_Nascimento DateTime
-  qntd_Amigos Int
-  nivel_Perfil Int
+  qntd_Amigos Int @default(0)
+  nivel_Perfil Int @default(0)
   tipo String
   genero_Musical String
   instru_Musical String
@@ -34,32 +37,64 @@ model Perfil {
 }
 
 model Publicacao {
-  Pub_id Int @id @default(autoincrement())
+  id_Pub Int @id @default(autoincrement())
   id_User Int
   conteudo String
-  data_horario DateTime
-  img String
+  data_horario DateTime @default(now())
+  img String?
   usuario Usuario @relation(fields: [id_User], references: [id_User])
+  comentario Comentario[]
 }
 
 model Comentario {
   id_Coment Int @id @default(autoincrement())
   id_User Int
-  data_horario DateTime
-  conteudo      String
-  user          Usuario    @relation(fields: [id_User], references: [id])
-  Pub_id        Int
-  Publi         Publicacao @relation(fields: [Pub_id], references: [id])
-  Resp          Resposta[]
+  id_Pub Int
+  conteudo String
+  data_horario DateTime @default(now())
+  usuario Usuario @relation(fields: [id_User], references: [id_User])
+  publicacao Publicacao @relation(fields: [id_Pub], references: [id_Pub])
+  resposta Resposta[]
 }
 
 model Resposta {
-  id_Resp       Int        @id @default(autoincrement())
-  ata_horario   DateTime
-  conteudo      String
-  id_User       Int
-  user          Usuario    @relation(fields: [id_User], references: [id])
+  id_Resp Int @id @default(autoincrement())
+  id_User Int
   id_Comentario Int
-  Coment        Comentario @relation(fields: [id_Comentario], references: [id])
+  conteudo String
+  data_horario DateTime @default(now())
+  usuario Usuario @relation(fields: [id_User], references: [id_User])
+  comentario Comentario @relation(fields: [id_Comentario], references: [id_Coment])
 } 
+
+model Curso {
+  id_Curso Int @id @default(autoincrement())
+  curso String
+  descricao String
+  foto_curso String?
+  instrumento String
+  total_horas DateTime
+  valor Float
+  modulo Modulo[]
+}
+model Modulo {
+  id_Modulo Int @id @default(autoincrement())
+  id_Curso Int
+  modulo String
+  descricao String
+  num_ordem Int
+  curso Curso @relation(fields: [id_Curso], references: [id_Curso]) 
+  aula Aula[]
+}
+
+model Aula {
+  id_Aula Int @id @default(autoincrement())
+  id_Modulo Int
+  Aula_Nome String
+  descricao String
+  video_aula String?
+  material String?
+  num_ordem Int
+  modulo Modulo @relation(fields: [id_Modulo], references: [id_Modulo])
+}
 
