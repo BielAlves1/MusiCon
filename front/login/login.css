@@ -1,98 +1,134 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
-  }
-  
-  body {
-    background: #1e1e1e;
-  }
-  
-  .login-box {
-    width: 320px;
-    height: 420px;
-    background: #191919;
-    color: #fff;
-    top: 50%;
-    left: 65%;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    transition: 0.5s;
-    box-shadow: 0px 0px 1px 1px rgba(255, 255, 255, 0.5);
-    border-radius: 10px;
-    padding: 70px 30px;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
 
-  .login-box:hover {
-    transition: 1.2s;
-    box-shadow: 0px 0px 20px 10px rgba(255, 255, 255, 0.5);
-  }
-  
-  .login-box > h2:hover {
-    color:#ffdd00
-  }
-  
-  .login-box h2 {
-    margin: 0;
-    padding: 0 0 20px;
-    text-align: center;
-    font-size: 22px;
-  }
-  
-  .login-box .user-box {
-    position: relative;
-  }
-  
-  .login-box .user-box input {
-    width: 100%;
-    padding: 10px 0;
-    font-size: 16px;
-    color: #fff;
-    margin-bottom: 30px;
-    border: none;
-    border-bottom: 1px solid #fff;
-    outline: none;
-    background: transparent;
-  }
-  
-  .login-box .user-box label {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 10px 0;
-    font-size: 16px;
-    color: #fff;
-    pointer-events: none;
-    transition: 0.5s;
-  }
-  
-  .login-box .user-box input:focus ~ label,
-  .login-box .user-box input:valid ~ label {
-    top: -20px;
-    left: 0;
-    color: #ffdd00;
-    font-size: 12px;
-  }
-  
-  .login-box a {
-    position: relative;
-    display: inline-block;
-    padding: 10px 20px;
-    color: #fff;
-    font-size: 16px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-decoration: none;
-    overflow: hidden;
-    transition: 0.5s;
-    margin-top: 70px;
-    border-radius: 10px;
-  }
-  
-  .login-box a:hover {
-    background: linear-gradient(100deg, #ac8400, #fdee79);
-    color: #000000;
-    border-radius: 50px;
-    box-shadow: 0 0 5px #ffdd00,         
-  }  
+body {
+  background: #1e1e1e;
+}
+
+.login-box {
+  width: 320px;
+  height: 420px;
+  background: #191919;
+  color: #fff;
+  top: 50%;
+  left: 65%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  transition: 0.5s;
+  box-shadow: 0px 0px 1px 1px rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  padding: 70px 30px;
+}
+
+.login-box:hover {
+  transition: 1s;
+  box-shadow: 0px 0px 20px 5px rgba(255, 255, 255, 0.5);
+}
+
+.login-box>h2:hover {
+  color: #ffdd00
+}
+
+.login-box h2 {
+  margin: 0;
+  padding: 0 0 20px;
+  text-align: center;
+  font-size: 22px;
+}
+
+.login-box .user-box {
+  position: relative;
+}
+
+.login-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+
+.login-box .user-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #c0c0c083;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.login-box .user-box input:focus~label,
+.login-box .user-box input:valid~label {
+  top: -20px;
+  left: 0;
+  color: #ffdd00;
+  font-size: 12px;
+}
+
+.btn {
+  position: relative;
+  display: inline-block;
+  padding: 10px 100px;
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: 0.5s;
+  margin-top: 5%;
+  border-radius: 10px;
+}
+
+.btn:hover {
+  background: linear-gradient(100deg, #ac8400, #ffec5a);
+  color: #000000;
+  border-radius: 50px;
+}
+
+.cadastro {
+  display: flex;
+  justify-content: space-between;
+}
+
+.esqSenha {
+  position: relative;
+  padding: 10px 0px;
+  color: #fff;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-decoration: none;
+  overflow: hidden;
+  margin-top: 30%;
+}
+
+.esqSenha:hover {
+  text-decoration: underline
+}
+
+.cad {
+  position: relative;
+  padding: 10px 0px;
+  color: #fff;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-decoration: none;
+  overflow: hidden;
+  margin-top: 30%;
+}
+
+.cad:hover {
+  text-decoration: underline
+}
