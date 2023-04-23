@@ -1,0 +1,140 @@
+/* Reset de estilos padrão */
+body, h1, h2, h3, p, a {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilos do cabeçalho */
+header {
+    background-color: #333;
+    color: #fff;
+}
+
+.titulo {
+    font-size: 24px;
+    width: 105px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin-left: 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Estilos do banner */
+#banner {
+    background-image: url(banner.jpg);
+    background-size: cover;
+    color: #fff;
+    padding: 80px;
+    text-align: center;
+}
+
+.subtitulo {
+    font-size: 36px;
+}
+
+.descricao {
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.botao {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-color: #ffd000;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Estilos da seção de cursos */
+#cursos {
+    padding: 40px;
+    text-align: center;
+}
+
+.card-curso {
+    display: inline-block;
+    width: 300px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.card-curso img {
+    max-width: 100%;
+}
+
+.card-curso h3 {
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+.card-curso p {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/* Estilos da seção de comunidade */
+#comunidade {
+    background-color: #333;
+    color: #fff;
+    padding: 40px;
+    text-align: center;
+}
+
+.card-usuario {
+    display: inline-block;
+    width: 200px;
+    margin: 20px;
+}
+
+.card-usuario img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.card-usuario h3 {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.card-usuario p {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.menu {
+    margin-bottom: 50px;
+    margin-left: 40%;
+}
+
+.bntmenu {
+    width: 15%;
+    height: 3vh;
+    cursor: pointer;
+    background-color: #333;
+    border: none;
+    color: #ffff;
+}
+
+.bntmenu:hover {
+    color: black;
+    background-color: #ffd000;
+    transition: 0.6s;
+    transform: scale(1.1);
+}
