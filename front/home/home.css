@@ -7,8 +7,11 @@ body, h1, h2, h3, p, a {
 
 /* Estilos do cabeçalho */
 header {
+    display: flex;
+    align-items: center;
     background-color: #333;
     color: #fff;
+    height: 7vh;
 }
 
 .titulo {
@@ -119,13 +122,13 @@ nav a {
 }
 
 .menu {
-    margin-bottom: 50px;
-    margin-left: 40%;
+    justify-content: space-between;
+    margin-left: 30%;
+    width: 100%;
 }
 
 .bntmenu {
-    width: 15%;
-    height: 3vh;
+    width: 20%;
     cursor: pointer;
     background-color: #333;
     border: none;
