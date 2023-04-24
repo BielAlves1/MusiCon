@@ -4,110 +4,149 @@ body, h1, h2, h3, p, ul, li {
     padding: 0;
 }
 
-/* Definição de fonte padrão */
+/* Estilo básico para a página */
 body {
     font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 /* Estilo para o cabeçalho */
 header {
     background-color: #333;
     color: #fff;
-    padding: 20px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
 }
 
 header h1 {
     font-size: 24px;
+    margin: 0;
 }
 
 nav ul {
     list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
-nav li {
+nav ul li {
     display: inline;
-    margin-left: 20px;
 }
 
-nav a {
+nav ul li a {
     color: #fff;
     text-decoration: none;
+    margin-left: 10px;
 }
 
-nav a:hover {
+nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Estilo para o perfil */
+/* Estilo para a seção de perfil */
 #perfil {
+    margin-top: 20px;
     display: flex;
-    margin-top: 40px;
 }
 
 #foto-perfil {
-    flex: 1;
-    padding: 20px;
+    flex: 0 0 200px;
 }
 
 #foto-perfil img {
     max-width: 100%;
-    border-radius: 50%;
+    height: auto;
 }
 
 #informacoes {
-    flex: 2;
-    padding: 20px;
-    background-color: #f9f9f9;
+    flex: 1;
+    padding-left: 20px;
 }
 
 #informacoes h2 {
-    font-size: 20px;
-    margin-bottom: 20px;
+    font-size: 18px;
+    margin-bottom: 10px;
 }
 
 #informacoes ul {
     list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
-#informacoes li {
-    margin-bottom: 10px;
+#informacoes ul li {
+    margin-bottom: 5px;
 }
 
-#informacoes strong {
-    font-weight: bold;
-}
-
-/* Estilo para os cursos */
+/* Estilo para a seção de cursos */
 #cursos {
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 #cursos h2 {
-    font-size: 20px;
-    margin-bottom: 20px;
+    font-size: 18px;
+    margin-bottom: 10px;
 }
 
 #cursos ul {
     list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
-#cursos li {
-    margin-bottom: 20px;
-}
-
-#cursos h3 {
-    font-size: 18px;
+#cursos ul li {
     margin-bottom: 10px;
+}
+
+#cursos ul li h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
 }
 
 /* Estilo para o rodapé */
 footer {
     background-color: #333;
     color: #fff;
-    padding: 20px;
-    margin-top: 40px;
+    padding: 10px;
+    margin-top: 20px;
+    position: absolute;
+    bottom: 0;
+    width: 98.6%;
 }
 
-footer p {
-    font-size: 14px;
+/* Estilos da seção de cursos */
+#cursos {
+    padding: 40px;
+    text-align: center;
+}
+
+.card-curso {
+    display: inline-block;
+    width: 300px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.card-curso img {
+    max-width: 100%;
+}
+
+.card-curso h3 {
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+.card-curso p {
+    font-size: 16px;
+    margin-top: 10px;
 }
