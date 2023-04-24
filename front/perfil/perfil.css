@@ -1,0 +1,113 @@
+/* Reset de margens e preenchimentos */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Definição de fonte padrão */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo para o cabeçalho */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 24px;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav li {
+    display: inline;
+    margin-left: 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para o perfil */
+#perfil {
+    display: flex;
+    margin-top: 40px;
+}
+
+#foto-perfil {
+    flex: 1;
+    padding: 20px;
+}
+
+#foto-perfil img {
+    max-width: 100%;
+    border-radius: 50%;
+}
+
+#informacoes {
+    flex: 2;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+#informacoes h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+#informacoes ul {
+    list-style-type: none;
+}
+
+#informacoes li {
+    margin-bottom: 10px;
+}
+
+#informacoes strong {
+    font-weight: bold;
+}
+
+/* Estilo para os cursos */
+#cursos {
+    margin-top: 40px;
+}
+
+#cursos h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+#cursos ul {
+    list-style-type: none;
+}
+
+#cursos li {
+    margin-bottom: 20px;
+}
+
+#cursos h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Estilo para o rodapé */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+footer p {
+    font-size: 14px;
+}
