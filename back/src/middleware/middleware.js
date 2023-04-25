@@ -1,20 +1,22 @@
-const jwt = require("jsonwebtoken")
+const jwt = require('jsonwebtoken')
 
-const validaAccess = (req, res, next) => {
+const verificaAccess = (req, res) => {
     const token = req.headers.authorization
 
     jwt.verify(token, process.env.KEY, (err, data) => {
-        if (err != null) res.status(404).json(err).end()
-        console.log(data)
-        if(data["uid"] != null){
-            next()
-        }
+        if (err != null) res.status(401).json({...err, "validar": false}).end()
         else{
-            res.status(401).end()
+            if(data["userid"] == req.body.id){
+                res.status(200).json({"validar": true, "user_name": data["user_name"]}).end()
+            }
+            else{
+                res.status(401).json({"validar": false}).end()
+            }
         }
+        
     })
 }
 
 module.exports = {
-    validaAcesso
+    verificaAccess
 }

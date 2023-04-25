@@ -1,73 +1,85 @@
+const bcrypt = require('bcrypt')
 const { PrismaClient } = require('@prisma/client');
-
 const prisma = new PrismaClient();
-
-const test = async (req, res) => {
-    res.status(200).json("API online, aguardando requisições").end();
-}
+const jwt = require('jsonwebtoken')
 
 const create = async (req, res) => {
-    const usuarios = await prisma.usuarios.create({
-        data: req.body
-    })
-    res.status(201).end();
-}
+    bcrypt.genSalt(10, function (err, salt) {
+        if (err == null) {
+            bcrypt.hash(req.body.senha, salt, async function (errCrypto, hash) {
+                if (errCrypto == null) {
+                    req.body.senha = hash
 
-const readAll = async (req, res) => {
-    const usuarios = await prisma.usuarios.findMany({
-    })
-    res.json(usuarios).end();
-}
+                    const usuario = await prisma.usuario.createMany({
+                        data: req.body
+                    })
 
-const read = async (req, res) => {
-    const usuarios = await prisma.usuarios.findUnique({
-        where: {
-            id: Number(req.params.id)
+                    res.status(200).json(usuario).end()
+                } else {
+                    res.status(500).json(errCrypto).end()
+                }
+            });
+        } else {
+            res.status(500).json(err).end()
         }
     })
-    res.json(usuarios).end();
 }
-
 const login = async (req, res) => {
-    const usuarios = await prisma.usuarios.findMany({
+    const usuario = await prisma.usuario.findFirstOrThrow({
         where: {
-            AND: [
-                { email: req.body.email },
-                { senha: req.body.senha }
-            ]
+            email: req.body.email
         }
-    })
-    if (usuarios.length > 0)
-        res.status(202).json(usuarios).end();
-    else
-        res.status(404).end();
+    }).then((value) => { return (value) })
+        .catch((err) => { return { "erro": "Usuário Incorreto", "validacao": false } })
+
+    if (usuario.erro == null) {
+        bcrypt.compare(req.body.senha, usuario.senha).then((value) => {
+            if (value) {
+                let data = { "user_id": usuario.id, "user_name": usuario.user_name }
+                jwt.sign(data, process.env.KEY, { expiresIn: '10m' }, function (err2, token) {
+                    if (err2 == null) {
+
+                        res.status(200).json({ "user_id": usuario.id,  "token": token, "user_name": usuario.user_name, "validacao": true }).end()
+                    } else {
+                        res.status(500).json(err2).end()
+                    }
+
+                })
+            } else {
+                res.status(201).json({ "erro": "Senha incorreta", "validacao": false }).end()
+            }
+        })
+    } else {
+        res.status(404).json(usuario).end()
+    }
+
+
 }
 
 const update = async (req, res) => {
-    const usuarios = await prisma.usuarios.update({
-        where: {
-            id: Number(req.params.id)
+    const usuario = await prisma.usuario.update({
+        where: { 
+            id_User: Number(req.params.id_User)
         },
         data: req.body
-    })
-    res.status(202).json(usuarios).end();
+    });
+    res.status(201).json(detalhe).end();
 }
 
-const del = async (req, res) => {
-    const usuarios = await prisma.usuarios.delete({
+const remove = async (req, res) => {
+    const usuario = await prisma.usuario.delete({
         where: {
-            id: Number(req.params.id)
+            id_User: Number(req.params.id_User)
         }
     })
-    res.status(204).end();
+    res.status(200).json({ msg: "Usuário Deletado!" }).end()
 }
 
+
+
 module.exports = {
-    test,
-    create,
-    readAll,
-    read,
     login,
+    create,
     update,
-    del
+    remove
 }
