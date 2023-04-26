@@ -8,7 +8,7 @@ function login() {
         headers: { 'Content-Type': 'application/json' }
     };
     options.body = JSON.stringify(credenciais);
-    fetch("http://localhost:5000/usuarios/login", options)
+    fetch("http://localhost:5000/login", options)
         .then(resp => resp.status)
         .then(resp => {
             if (resp == 200) {
