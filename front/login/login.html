@@ -12,14 +12,14 @@
       <h2>Login</h2>
       <form>
         <div class="user-box">
-          <input type="text" name="" required="" />
+          <input id="email" type="text" name="" required="" />
           <label>Digite seu Email</label>
         </div>
         <div class="user-box">
-          <input type="password" name="" required="" />
+          <input id="senha" type="password" name="" required="" />
           <label>Digite sua Senha</label>
         </div>
-        <a class="btn" href="#">Login</a>
+        <a id="btLogin" class="btn" onClick="login()">Login</a>
         <div class="cadastro">
           <a class="esqSenha" href="#">Esqueci minha senha</a>        
           <a class="cad" href="../cadastro/cadastro.html"> Cadastre-se</a>
@@ -27,4 +27,5 @@
       </form>
     </div>
   </body>
+  <script src="login.js"></script>
 </html>

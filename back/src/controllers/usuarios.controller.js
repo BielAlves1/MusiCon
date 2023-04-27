@@ -30,7 +30,7 @@ const login = async (req, res) => {
             email: req.body.email
         }
     }).then((value) => { return (value) })
-        .catch((err) => { return { "erro": "Usuário Incorreto", "validacao": false } })
+        .catch((err) => { return { "erro": "Email Inválido!", "validacao": false } })
 
     if (usuario.erro == null) {
         bcrypt.compare(req.body.senha, usuario.senha).then((value) => {
@@ -39,17 +39,17 @@ const login = async (req, res) => {
                 jwt.sign(data, process.env.KEY, req.body.check ? {} : { expiresIn: '30m' }, function (err2, token) {
                     if (err2 == null) {
 
-                        res.status(200).json({ "user_id": usuario.id,  "token": token, "user_name": usuario.user_name, "validacao": true }).end()
+                        res.status(200).json({ "id_User": usuario.id_User, "token": token, "user_name": usuario.user_name, "validacao": true }).end()
                     } else {
                         res.status(500).json(err2).end()
                     }
 
                 })
             } else {
-                res.status(404).json({ "erro": "Senha incorreta", "validacao": false }).end()
+                res.status(404).json({ "erro": "Senha Inválida!", "validacao": false }).end()
             }
         })
-    } else {
+    } else            { 
         res.status(404).json(usuario).end()
     }
 
@@ -64,7 +64,7 @@ const update = async (req, res) => {
                     req.body.senha = hash
 
                     const usuario = await prisma.usuario.update({
-                        where: { 
+                        where: {
                             id_User: Number(req.params.id_User)
                         },
                         data: req.body
