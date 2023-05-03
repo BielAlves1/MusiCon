@@ -8,14 +8,12 @@ body, h1, h2, h3, p, a {
 /* Estilo para o cabeçalho */
 header {
     display: flex;
-    align-items: center;
-    background-color: #333;
-    margin: 0;
+    align-items: center; 
+    background-color: black;
     position: absolute;
     top: 0;
     color: #fff;
-    padding: 10px;
-    display: flex;
+    width: 100%;
 }
 
 .titulo {
@@ -97,9 +95,8 @@ nav a {
 
 /* Estilos da seção de comunidade */
 #comunidade {
-    background-color: #333;
+    background-color: black;
     color: #fff;
-    padding: 40px;
     text-align: center;
 }
 
@@ -128,9 +125,7 @@ nav a {
 .menu {
     justify-content: space-between;
     align-items: center;
-    position: absolute;
-    top: 0;
-    margin-left: 60%;
+    margin-left: 50%;
     width: 100%;
     height: 6vh;
 }
@@ -139,7 +134,7 @@ nav a {
     width: 20%;
     height: 6vh;
     cursor: pointer;
-    background-color: #333;
+    background-color: black;
     border: none;
     color: #ffff;
 }
@@ -155,4 +150,9 @@ nav a {
     width: 30%;
     height: 90vh;
     border: 1px solid black;
+}
+
+.logo{
+    width: 10%;
+    margin-left: 3%;
 }

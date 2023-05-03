@@ -35,6 +35,10 @@
   text-align: center;
   font-size: 22px;
   }
+
+  .signup-box>h2:hover {
+    color: #ffdd00
+  }
   
   .signup-box .user-box {
   position: relative;
@@ -70,27 +74,22 @@
   color: #f4d003;
   font-size: 12px;
   }
-  
-  .signup-box a {
-  position: relative;
-  display: inline-block;
-  padding: 10px 20px;
-  color: #fff;
-  font-size: 16px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-decoration: none;
-  overflow: hidden;
-  transition: 0.5s;
-  margin-top: 130px;
-  border-radius: 10px;
+
+  .cad {
+    display: flex;
+    position: relative;
+    padding: 10px 0px;
+    color: #fff;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    overflow: hidden;
+    margin-top: 5%;
   }
   
-  .signup-box a:hover {
-  background: #f4d003;
-  color: #000000;
-  border-radius: 50px;
-  box-shadow: 0 0 5px #f4d003;
+  .cad:hover {
+    text-decoration: underline
   }
 
   .btn {
@@ -104,7 +103,8 @@
     text-decoration: none;
     overflow: hidden;
     transition: 0.5s;
-    margin-top: 5%;
+    margin-top: 15%;
+    margin-left: 15%;
     border-radius: 10px;
   }
   
