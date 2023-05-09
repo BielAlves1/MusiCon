@@ -21,8 +21,7 @@ model Usuario {
   resposta Resposta[]
 }
 model Perfil {
-  id_Perfil Int @id @default(autoincrement())
-  id_User Int
+  id_User Int @id
   nome String
   sobrenome String
   genero String

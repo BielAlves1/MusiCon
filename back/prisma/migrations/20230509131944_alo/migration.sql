@@ -11,7 +11,6 @@ CREATE TABLE `Usuario` (
 
 -- CreateTable
 CREATE TABLE `Perfil` (
-    `id_Perfil` INTEGER NOT NULL AUTO_INCREMENT,
     `id_User` INTEGER NOT NULL,
     `nome` VARCHAR(191) NOT NULL,
     `sobrenome` VARCHAR(191) NOT NULL,
@@ -24,7 +23,7 @@ CREATE TABLE `Perfil` (
     `genero_Musical` VARCHAR(191) NOT NULL,
     `instru_Musical` VARCHAR(191) NOT NULL,
 
-    PRIMARY KEY (`id_Perfil`)
+    PRIMARY KEY (`id_User`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- CreateTable
