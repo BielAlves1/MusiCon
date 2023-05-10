@@ -3,9 +3,9 @@ const router = express.Router();
 
 const Curso = require("../controllers/curso.controller")
 
-router.get('/perfil/read', Curso.read)
-router.post('/perfil/create', Curso.create)
-router.put('/perfil/update/:id_User', Curso.update)
-router.delete('/perfil/delete/:id_User', Curso.remove)
+router.get('/curso/read', Curso.read)
+router.post('/curso/create', Curso.create)
+router.put('/curso/update/:id_Curso', Curso.update)
+router.delete('/curso/delete/:id_Curso', Curso.remove)
 
 module.exports = router

@@ -29,7 +29,7 @@ const update = async (req, res) => {
 const remove = async (req, res) => {
     const perfil = await prisma.perfil.delete({
         where: {
-            id: Number(req.body.id)
+            id: Number(req.body.id_User)
         }
     })
     res.status(200).json(perfil).end()
