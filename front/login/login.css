@@ -94,6 +94,7 @@ body {
   background: linear-gradient(100deg, #ac8400, #ffeb53);
   color: #000000;
   border-radius: 50px;
+  cursor: pointer;
 }
 
 .cadastro {
