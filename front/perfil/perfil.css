@@ -129,3 +129,64 @@ nav a {
     height: 50vh;
     margin: 0 auto 20px;
   }
+
+  .post {
+    background-color: #f5f6f7;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+  }
+
+  .post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .post-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin-right: 10px;
+  }
+
+  .post-author {
+    font-weight: bold;
+  }
+
+  .post-content {
+    margin-bottom: 10px;
+  }
+
+  .post-image {
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .post-actions {
+    display: flex;
+    align-items: center;
+  }
+
+  .post-action {
+    margin-right: 10px;
+    color: #999;
+    cursor: pointer;
+  }
+
+  .post-action:hover {
+    color: #333;
+  }
+
+  .profile-btn {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .profile-btn > button {
+    width: 100%;
+    cursor: pointer;
+  }
