@@ -1,54 +1,90 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Descrição do site">
-    <meta name="keywords" content="palavras-chave, do, site">
-    <title>Perfil do Músico</title>
-    <link rel="stylesheet" href="perfil.css">
+  <meta charset="UTF-8">
+  <meta name="description" content="Descrição do site">
+  <meta name="keywords" content="palavras-chave, do, site">
+  <title>Perfil do Músico</title>
+  <link rel="stylesheet" href="perfil.css">
 </head>
+
 <body>
-    <header>
-        <img src="../assets/logo3.png" class="logo" alt="">
-        <nav class="menu">
-                <ul>
-                    <li><button href="#" class="bntmenu">Página Inicial</button></li>
-                    <li><button href="#" class="bntmenu">Cursos</button></li>
-                    <li><button href="#" class="bntmenu">Login</button></li>
-                    <li><button href="#" class="bntmenu">Registrar</button></li>
-                </ul>
-        </nav>
-    </header>
-    <main>
-        <div class="profile">
-            <img src="../assets/usuario1.jpg" alt="Profile Picture" class="profile-picture">
-            <h1 class="profile-name">Nome do Usuário</h1>
-            <div class="profile-info">
-              <span class="profile-label">Data de Nascimento:</span>
-              <span class="profile-data">01 de Janeiro de 1990</span>
-            </div>
-            <div class="profile-info">
-              <span class="profile-label">Localização:</span>
-              <span class="profile-data">Cidade, Estado</span>
-            </div>
-            <div class="profile-info">
-              <span class="profile-label">E-mail:</span>
-              <span class="profile-data">usuario@example.com</span>
-            </div>
-            <div class="post">
-              <div class="profile-info" style="display: flex;">
-                <img class="post-avatar" src="../assets/usuario1.jpg" alt="">
-                <p class="profile-description">minha guitarra oia q joia 👍</p>
-              </div>
-              <div class="profile-post">
-                <img class="profile-imgpost" src="../assets/curso1.jpg" alt="">
-              </div>
-              <div class="profile-btn">
-                <button>Dislike</button>
-                <button>Coment</button>
-                <button>Like</button>
-              </div>
-          </div>
-    </main>
+  <header>
+    <img src="../assets/logo3.png" class="logo" alt="">
+    <nav class="menu">
+      <ul>
+        <li><button href="#" class="bntmenu">Página Inicial</button></li>
+        <li><button href="#" class="bntmenu">Cursos</button></li>
+        <li><button href="#" class="bntmenu">Login</button></li>
+        <li><button href="#" class="bntmenu">Registrar</button></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="profile">
+      <img src="../assets/usuario1.jpg" alt="Profile Picture" class="profile-picture">
+      <h1 class="profile-name">Nome do Usuário</h1>
+      <hr>
+      <div class="profile-info">
+        <span class="profile-label">Data de Nascimento:</span>
+        <span class="profile-data">01 de Janeiro de 1990</span>
+      </div>
+      <div class="profile-info">
+        <span class="profile-label">Localização:</span>
+        <span class="profile-data">Cidade, Estado</span>
+      </div>
+      <hr>
+      <div class="profile-info">
+        <button><span>Fotos</span></button>
+      </div>
+      <hr>
+      <div class="post">
+        <div class="profile-info" style="display: flex; justify-content: space-between;">
+          <img class="post-avatar" src="../assets/usuario1.jpg" alt="">
+          <p class="profile-description">minha guitarra oia q joia 👍</p>
+          <button>X</button>
+        </div>
+        <div class="profile-post">
+          <img class="profile-imgpost" src="../assets/curso1.jpg" alt="">
+        </div>
+        <div class="profile-btn">
+          <button>Dislike</button>
+          <button>Coment</button>
+          <button>Like</button>
+        </div>
+      </div>
+      <div class="post">
+        <div class="profile-info" style="display: flex; justify-content: space-between;">
+          <img class="post-avatar" src="../assets/usuario1.jpg" alt="">
+          <p class="profile-description">piano fds ^_____^</p>
+          <button>X</button>
+        </div>
+        <div class="profile-post">
+          <img class="profile-imgpost" src="../assets/curso2.jpg" alt="">
+        </div>
+        <div class="profile-btn">
+          <button>Dislike</button>
+          <button>Coment</button>
+          <button>Like</button>
+        </div>
+      </div>
+      <div class="post">
+        <div class="profile-info" style="display: flex; justify-content: space-between;">
+          <img class="post-avatar" src="../assets/usuario1.jpg" alt="">
+          <p class="profile-description">pai ta baterista kkkk 😎</p>
+          <button>X</button>
+        </div>
+        <div class="profile-post">
+          <img class="profile-imgpost" src="../assets/curso3.jpg" alt="">
+        </div>
+        <div class="profile-btn">
+          <button>Dislike</button>
+          <button>Coment</button>
+          <button>Like</button>
+        </div>
+      </div>
+  </main>
 </body>
+
 </html>
