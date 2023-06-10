@@ -133,7 +133,6 @@ nav a {
   .post {
     background-color: #f5f6f7;
     border-radius: 5px;
-    padding: 10px;
     margin-bottom: 10px;
     border: 1px solid black;
   }
@@ -188,4 +187,9 @@ nav a {
   .profile-btn > button {
     width: 100%;
     cursor: pointer;
+  }
+
+  #btnfechar {
+    width: 10%;
+    height: 20px;
   }

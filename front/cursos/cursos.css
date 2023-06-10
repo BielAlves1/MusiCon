@@ -38,11 +38,9 @@ nav a {
 }
 
 /* Estilos do banner */
-#banner {
-    background-image: url(banner.jpg);
-    background-size: cover;
+#banner {   
     color: #fff;
-    padding: 80px;
+    padding: 10px;
     text-align: center;
 }
 
@@ -59,10 +57,14 @@ nav a {
     display: inline-block;
     margin-top: 30px;
     padding: 10px 20px;
-    background-color: #ffd000;
+    background-color: #000000;
     color: #fff;
     text-decoration: none;
     font-weight: bold;
+}
+
+.botao > hover {
+    color: #ffd000;
 }
 
 /* Estilos da seção de cursos */
