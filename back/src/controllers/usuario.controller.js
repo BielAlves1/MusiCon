@@ -50,7 +50,7 @@ const login = async (req, res) => {
             }
         })
     } else            { 
-        res.status(404).json(usuario).end()
+        res.status(404).json({ "erro": "Usuário não encontrado!", "validacao": false }).end()
     }
 
 
