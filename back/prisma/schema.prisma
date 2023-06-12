@@ -39,6 +39,8 @@ model Publicacao {
   id_Pub Int @id @default(autoincrement())
   id_User Int
   conteudo String
+  like Int @default(0)
+  deslike Int @default(0)
   data_horario DateTime @default(now())
   img String?
   usuario Usuario @relation(fields: [id_User], references: [id_User])

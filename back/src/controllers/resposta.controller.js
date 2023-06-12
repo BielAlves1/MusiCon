@@ -18,7 +18,7 @@ const read = async (req, res) => {
 const update = async (req, res) => {
     const resposta = await prisma.resposta.update({
         where: {
-            id: Number(req.body.id_Resp)
+            id_Resp: Number(req.params.id_Resp)
         },
         data: req.body
     })
@@ -29,7 +29,7 @@ const update = async (req, res) => {
 const remove = async (req, res) => {
     const resposta = await prisma.resposta.delete({
         where: {
-            id: Number(req.body.id_Resp)
+            id_Resp: Number(req.params.id_Resp)
         }
     })
     res.status(200).json(resposta).end()
