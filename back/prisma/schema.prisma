@@ -3,6 +3,7 @@
 
 generator client {
   provider = "prisma-client-js"
+  previewFeatures = ["views"]
 }
 
 datasource db {
@@ -12,7 +13,7 @@ datasource db {
 
 model Usuario {
   id_User Int @id @default(autoincrement())
-  user_name String
+  user_name String @unique
   email String @unique
   senha String
   perfil Perfil[]
@@ -38,9 +39,8 @@ model Perfil {
 model Publicacao {
   id_Pub Int @id @default(autoincrement())
   id_User Int
-  conteudo String
+  conteudo String?
   like Int @default(0)
-  deslike Int @default(0)
   data_horario DateTime @default(now())
   img String?
   usuario Usuario @relation(fields: [id_User], references: [id_User])
@@ -51,8 +51,9 @@ model Comentario {
   id_Coment Int @id @default(autoincrement())
   id_User Int
   id_Pub Int
-  conteudo String
+  conteudo String?
   data_horario DateTime @default(now())
+  like Int @default(0)
   usuario Usuario @relation(fields: [id_User], references: [id_User])
   publicacao Publicacao @relation(fields: [id_Pub], references: [id_Pub])
   resposta Resposta[]
@@ -62,8 +63,9 @@ model Resposta {
   id_Resp Int @id @default(autoincrement())
   id_User Int
   id_Comentario Int
-  conteudo String
+  conteudo String?
   data_horario DateTime @default(now())
+  like Int @default(0)
   usuario Usuario @relation(fields: [id_User], references: [id_User])
   comentario Comentario @relation(fields: [id_Comentario], references: [id_Coment])
 } 
@@ -99,3 +101,9 @@ model Aula {
   modulo Modulo @relation(fields: [id_Modulo], references: [id_Modulo])
 }
 
+view UserInfo {
+  id    Int    @unique
+  email String
+  name  String
+  bio   String
+}

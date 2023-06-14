@@ -31,7 +31,7 @@ function login() {
             }
         })
     }else{
-        //
+        alert("PREENCHA TODOS OS CAMPOS!")
     }
     
 };
