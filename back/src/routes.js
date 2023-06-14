@@ -14,6 +14,8 @@ const Aula = require("./controllers/aula.controller")
 
 router.post('/usuario/create', Usuario.create)
 router.post('/login', Usuario.login)
+router.get('/usuario/readUserName/:user_name', Usuario.readUserName)
+router.get('/usuario/readEmail/:email', Usuario.readEmail)
 router.post('/vereficaUser', Middleware.verificaAccess)
 router.put('/usuario/update/:id_User', Usuario.update)
 router.delete('/usuario/delete/:id_User', Usuario.remove)

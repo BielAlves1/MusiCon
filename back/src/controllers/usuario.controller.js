@@ -24,6 +24,26 @@ const create = async (req, res) => {
         }
     })
 }
+
+const readUserName = async (req, res) => {
+    const usuario = await prisma.usuario.findUnique({
+        where: {
+            user_name: req.params.user_name
+        }
+    });
+
+    res.status(200).json(usuario).end();
+}
+
+const readEmail = async (req, res) => {
+    const usuario = await prisma.usuario.findUnique({
+        where: {
+            email: req.params.email
+        }
+    });
+    res.status(200).json(usuario).end();
+}
+
 const login = async (req, res) => {
     const usuario = await prisma.usuario.findFirstOrThrow({
         where: {
@@ -94,6 +114,8 @@ const remove = async (req, res) => {
 module.exports = {
     login,
     create,
+    readUserName,
+    readEmail,
     update,
     remove
 }
