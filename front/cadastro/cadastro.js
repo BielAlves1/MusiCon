@@ -4,7 +4,7 @@ const confsenha = document.querySelector("#confsenha");
 const username = document.querySelector("#username");
 
 const verificaEmail = () => {
-    fetch("http://localhost:5000/usuario/readEmail/" + email.value)
+    fetch("http://localhost:5000/usuario/readEmail")
         .then(resp => { return resp.json() })
         .then(data => {
             if (data.email == null) {
@@ -16,7 +16,7 @@ const verificaEmail = () => {
 }
 
 const verificaUserName = () => {
-    fetch("http://localhost:5000/usuario/readUserName/" + username.value)
+    fetch("http://localhost:5000/usuario/readUserName")
         .then(resp => { return resp.json() })
         .then(data => {
             if (data.user_name != username.value) {

@@ -26,21 +26,14 @@ const create = async (req, res) => {
 }
 
 const readUserName = async (req, res) => {
-    const usuario = await prisma.usuario.findUnique({
-        where: {
-            user_name: req.params.user_name
-        }
-    });
-
+    const usuario = await prisma.usuario.findFirstOrThrow();
+    
     res.status(200).json(usuario).end();
 }
 
 const readEmail = async (req, res) => {
-    const usuario = await prisma.usuario.findUnique({
-        where: {
-            email: req.params.email
-        }
-    });
+    const usuario = await prisma.usuario.findFirstOrThrow();
+
     res.status(200).json(usuario).end();
 }
 
