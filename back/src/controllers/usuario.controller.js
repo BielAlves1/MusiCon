@@ -26,14 +26,21 @@ const create = async (req, res) => {
 }
 
 const readUserName = async (req, res) => {
-    const usuario = await prisma.usuario.findFirstOrThrow();
-    
+    const usuario = await prisma.usuario.findFirstOrThrow({
+        where: {
+            user_name: req.body.user_name
+        }
+    });
+
     res.status(200).json(usuario).end();
 }
 
 const readEmail = async (req, res) => {
-    const usuario = await prisma.usuario.findFirstOrThrow();
-
+    const usuario = await prisma.usuario.findFirstOrThrow({
+        where: {
+            email: req.body.email
+        }
+    });
     res.status(200).json(usuario).end();
 }
 
